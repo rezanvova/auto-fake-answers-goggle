@@ -17,10 +17,6 @@ from selenium.common.exceptions import TimeoutException, NoSuchElementException
 from config_parser import load_survey_config
 
 
-FORM_URL_DEFAULT = (
-    "https://docs.google.com/forms/d/e/1FAIpQLSehNGhHOCsa-5qtTYe8r7n5YdpI_uxEa3utpH4LkGUuCxZMrA/viewform"
-)
-
 CONFIG_FILE = "survey_answers.md"
 
 
@@ -322,7 +318,7 @@ def main() -> int:
     parser.add_argument("-n", "--count", type=int, default=150, help="Количество отправок (по умолчанию: 150)")
     parser.add_argument("--headless", action="store_true", help="Запустить в headless режиме")
     parser.add_argument("--sleep", type=float, default=1.0, help="Задержка между отправками в секундах (по умолчанию: 1)")
-    parser.add_argument("--url", type=str, default=FORM_URL_DEFAULT, help="URL формы")
+    parser.add_argument("--url", type=str, required=True, help="URL формы")
     parser.add_argument("--config", type=str, default=CONFIG_FILE, help="Путь к файлу конфигурации (.md)")
     args = parser.parse_args()
     
