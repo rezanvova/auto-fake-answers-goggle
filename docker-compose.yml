@@ -1,0 +1,5 @@
+services:
+  sender:
+    build: .
+    command: ["python", "main.py", "--count", "150", "--headless", "--sleep", "1"]
+    shm_size: "2gb"
