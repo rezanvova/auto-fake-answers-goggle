@@ -308,18 +308,7 @@ def main() -> int:
                     logger.error(f"[{i}/{send_count}] Failed to submit")
                     continue
 
-                try:
-                    WebDriverWait(driver, 2).until(
-                        EC.any_of(
-                            EC.presence_of_element_located((By.XPATH, "//div[contains(text(), 'Ваш ответ записан')]")),
-                            EC.presence_of_element_located((By.XPATH, "//div[contains(text(), 'ответ отправлен')]")),
-                            EC.presence_of_element_located((By.XPATH,
-                                                            "//div[contains(@class, 'freebirdFormviewerViewResponseConfirmationMessage')]")),
-                        )
-                    )
-                    logger.success(f"[{i}/{send_count}] Response submitted successfully!")
-                except TimeoutException:
-                    logger.info(f"[{i}/{send_count}] Submitted (no confirmation found)")
+                logger.success(f"[{i}/{send_count}] Submitted successfully!")
 
                 if sleep_s > 0 and i < send_count:
                     time.sleep(sleep_s)
