@@ -1,4 +1,4 @@
-# Auto Answer Generator
+# Навайбокодил приколов (Auto Answer Generator)
 
 Автоматическое заполнение Google Forms с умной генерацией ответов через AI.
 
@@ -131,7 +131,9 @@ python main.py [OPTIONS]
 
 ```bash
 # 50 отправок с окном браузера
+Так запускайте и все остальное уже по приколу чисто
 python main.py --url "https://..." -n 50
+
 
 # 100 отправок в фоновом режиме
 python main.py --url "https://..." -n 100 --headless
